@@ -1,30 +1,26 @@
-# Module15-Challenge：MechaCar_Statistical_Analysis
+# Module15-Challenge
 ## Overview
-## Purpose
- - Perform multiple linear regression analysis to identify which variables in the dataset predict the mpg of MechaCar prototypes
- - Collect summary statistics on the pounds per square inch (PSI) of the suspension coils from the manufacturing lots
- - Run t-tests to determine if the manufacturing lots are statistically different from the mean population
- - Design a statistical study to compare vehicle performance of the MechaCar vehicles against vehicles from other manufacturers. For each statistical analysis, you’ll write a summary interpretation of the findings.
+The purpose of this analysis is to compare statistical data in order to get usefull insigths regarding different vehicle variables and parameters using R.
+
 ## Linear Regression to Predict MPG
 ![linear_regression](https://github.com/MauricioIQA/Module-15/blob/main/1.PNG)  
-From the summary of linear regression model above, the variables *vehicle_length*, *ground_clearance* and *vehicle_weight* are statistically significant since there *p-values* are under the confident level 0.05. According to the *R-squred：0.6825* and *p-value:5.35e-11*, the model fits the data well and it can accurately predict the MPG. However, there are still something needed to consider:
- - It is necessary to remove the insignificant variables (*spoiler_angle*, *AWD*) and refit a new linear regression to compare?
- - *vehicle_length* and *vehicle_weight* always have positive correlation. So they are not independent each other. It is necessary to consider the correlation between these two variables.
+From the summary of linear regression model, we can appreciate vehicle_length, ground_clearance and vehicle_weight are statistically significant since there p-values are under the confident level 0.05. We can safely asumme that the model fits the data well and it can accurately predict the MPG.
 ## Summary Statistics on Suspension Coils
 ![t.test_overall](https://github.com/MauricioIQA/Module-15/blob/main/2.PNG)  
-The *p-value* is greater than 0.05, which means that there is not enought evidence to reject null hypothesis that the population mean of 1500.  
+The p-value > 0.05, meaning not enought statistical evidence to reject null hypothesis.  
 ### T.test on Lot 1
 ![t.test_lot1](https://github.com/MauricioIQA/Module-15/blob/main/3.PNG)  
 ### T.test on Lot 2
 ![t.test_lot2](https://github.com/MauricioIQA/Module-15/blob/main/4.PNG) 
 ### T.test on Lot 3
 ![t.test_lot3](https://github.com/MauricioIQA/Module-15/blob/main/5.PNG)  
-From the results above, *Lot 1* and *Lot 2* are not statistically significant from the population mean of 1500 since there *p-values* are quite larger than 0.05. The *Lot 3* is significant with *p-value: 0.04168* less than 0.05.
+Lot 1 and Lot 2 are not statistically significant. The Lot 3 is significant, p-value = 0.04168 < 0.05.
 
 ## Study Design: MechaCar vs Competition
-A new study will be designed on *maintenance cost* and *horse power*. *horse power* can determine the performance while driving and *maintenance cost* is a key that consumers always consider before buying a new car.
- - The metrics to test are *maintenance cost* and *horse power*.
- - Null Hypothesis: *maintenance cost* and *horse power* has insignificant relations with *MPG*. Alternative Hypothesis: *maintenance cost* and *horse power* has significant relations with *MPG*.
- - (1) Linear regression model will be used to test the relationship between  *maintenance cost*,*horse power* and *MPG*.
- - (2) Using anova test to test *maintenance cost* and *horse power* based on number of cylinders.
- - The further data need to be collected is the number of cylinders of vehicles, horsepower and average maintenance cost of vehicles.
+Another study migth be performed under the maintenance cost 
+ - The metric to review is maintenance cost.
+ - Null Hypothesis: maintenance cost has insignificant relations with MPG. 
+ - Alternative Hypothesis: maintenance cost don't have significant relations with MPG.
+ - (1) Linear regression model will be used to test the relationship between  maintenance cost and MPG.
+ - (2) Using anova test to test maintenance cost based on number of components.
+ - Further data needed to be collected is average maintenance cost of vehicles.
